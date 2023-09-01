@@ -1,7 +1,7 @@
 baseURL = "https://matrix.radio"
 languageCode = "en-gb"
 title = "matrix.radio"
-theme = "noteworthy"
+theme = "hugo-book"
 enableRobotsTXT = true
 paginate = 4 # Set the number of posts to show before overflowing to the next page.
 summaryLength = 10 # Configure how long the post summary should be on the homepage.
@@ -17,17 +17,34 @@ summaryLength = 10 # Configure how long the post summary should be on the homepa
   unsafe = true
 
 [params]
-  # types of posts to be listed on the home page
-  mainSections = ["post"]
+  # (Optional, default light) Sets color theme: light, dark or auto.
+  # Theme 'auto' switches between dark and light modes based on browser/os preferences
+  BookTheme = 'auto'
 
-  # Turn on LaTeX support
-  math = true
-  # Blog description at the top of the homepage. Supports markdown.
-  description = "Noteworthy is a minimalist Hugo theme, perfect for writers and bloggers."
-  
-  showReadMore = false
-  # Programming
-  github = "https://github.com/matrixdotradio"
+  # (Optional, default true) Controls table of contents visibility on right side of pages.
+  # Start and end levels can be controlled with markup.tableOfContents setting.
+  # You can also specify this parameter per page in front matter.
+  BookToC = true
+
+  # (Optional, default docs) Specify section of content to render as menu
+  # You can also set value to "*" to render all sections to menu
+  BookSection = '*'
+
+  # Set source repository location.
+  # Used for 'Last Modified' and 'Edit this page' links.
+  BookRepo = 'https://github.com/matrixdotradio/matrix.radio'
+
+  # Specifies commit portion of the link to the page's last modified commit hash for 'doc' page
+  # type.
+  # Required if 'BookRepo' param is set.
+  # Value used to construct a URL consisting of BookRepo/BookCommitPath/<commit-hash>
+  # Github uses 'commit', Bitbucket uses 'commits'
+  BookCommitPath = 'commit'
+
+  # Enable 'Edit this page' links for 'doc' page type.
+  # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
+  # Path must point to the site directory.
+  BookEditPath = 'edit/main/'
 
 # Menu links along the sidebar navigation.
 [[menu.main]]
